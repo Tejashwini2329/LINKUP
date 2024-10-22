@@ -5,10 +5,10 @@ It is a social media website to connect with people.
 
 ![logo](logo1.png)
 
-![home page](home.png)
+![home page](home.jpg)
 
-![login page](login.png)
+![login page](login.jpg)
 
-![signup page](signup.png)
+![signup page](signup.jpg)
 
-![Main](content.png)
+![Main](content.jpg)
