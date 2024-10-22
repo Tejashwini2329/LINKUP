@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="post.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+           
+            display: grid;
+            grid-template-rows: 10% 15% 75% ; /* 20% for header, 80% for content */
+            grid-template-columns: 80% 20%; /* 80% for content area, 20% for aside */
+            grid-template-areas: 
+                              "header header"
+                              "section doticon"
+                              "content doticon"
+                               ;
+            height: 100%
+          
+            
+        }
+        
+        header {
+            grid-column: 1 / span 2; /* Span across both columns */
+            background: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        header img {
+            width: 50px; /* Adjust logo size */
+            height: auto;
+        }
+        header h1 {
+            font-size: 1.8em;
+            color: white;
+            font-weight: bold;
+        }
+        aside {
+           grid-row: span 2;
+            background: rgba(228, 31, 169, 0.9);
+            
+            display: none;
+            flex-direction: column;
+           
+            color: #fcfcfc;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        }
+        aside a{
+            color: #faf5f5;
+            text-decoration: none;
+            padding: 10px 0;
+            font-size: 1.2em;
+            transition: color 0.3s;
+           
+            margin-left: 10px;
+            margin-right: 10px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+           margin: 5px;
+            align-items: start;
+            height: 100%;
+            width:15%;
+        }
+        
+        
+
+        aside i{
+            margin: 15px;
+        }
+       
+        aside a:hover {
+            color: #ff6f61; /* Highlight color on hover */
+            text-decoration: underline;
+        }
+        .doticon{ 
+              margin-top: 20px;
+              margin-left: 0px;
+               color: #0c0d0d;
+      }
+      .doticon h1{ 
+              
+              margin-left: 240px;
+            
+      }
+        
+        
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .logo h2{
+              
+                align-content: center;
+                display: flex;
+                color: rgb(130, 83, 238);
+                font-family: "Agbalumo", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                text-align: center;
+                align-content: center;
+                margin-top: 25px;
+                font-size: xx-large;
+             
+        }
+        .logo i{
+            margin: 10px;
+        }
+        .message{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-left: 1020px;
+            margin-top: 20px;
+        }
+        .message h2{
+              
+                align-content: center;
+                display: flex;
+                color: rgb(237, 12, 237);
+                font-family: "Agbalumo", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                text-align: center;
+                align-content: center;
+                margin-top: 25px;
+                font-size: xx-large;
+             
+        }
+        .message a{
+            color: #e71cc2;
+        }
+        .message i{
+            margin: 10px;
+        }
+       .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          position: absolute;
+          margin-left: 700px;
+            margin-top: 50px;
+       }
+
+.searchbar input {
+  background-color: #fafafa;
+  padding: 5px;
+  outline: none;
+  border: 1px solid rgb(218, 217, 217);
+  text-align: center;
+  border-radius: 2px;
+  color: rgb(77, 77, 77);
+}
+
+.searchbar input::placeholder {
+  font-weight: lighter;
+  color: rgb(172, 172, 172);
+}
+.card {
+  width: 33%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 90px;
+  
+  margin-left: 5px;
+}
+
+.card h4 {
+  color: rgb(100, 100, 100);
+}
+
+ .card {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  /* min-height: 400px; */
+  display: flex;
+}
+
+ .card .top {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card .top a {
+  color: #8695f1;
+  padding-right: 20px;
+}
+
+.card .bottom {
+  padding: 10px 20px;
+}
+
+.card .top .userDetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.card .top .userDetails h3 {
+  font-size: 16px;
+  color: #4d4d4f;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+ .card .top .userDetails h3 span {
+  font-size: 0.75em;
+}
+
+ .card .top .userDetails h3 span {
+  font-size: 0.75em;
+}
+.profilepic {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profilepic .profile_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to right, red, orange);
+  padding: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.profilepic .profile_img .image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.profilepic .profile_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+  width: 65%;
+  margin-top: 30px;
+}
+
+.statuses {
+  margin-bottom: 30px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 20px 0;
+  border-radius: 2px;
+  margin-top: 20px;
+  overflow: auto;
+}
+
+.statuses .status {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: auto;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  background: linear-gradient(to right, red, orange);
+  padding: 2px;
+  margin-left: 15px;
+  cursor: pointer;
+
+}
+
+.statuses .status .image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.statuses .status img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        
+ 
+    </header>
+    <section>
+      <div class="col-9">
+        <div class="statuses">
+          <div class="status">
+            <div class="image">
+              <img src="user-1.jpeg" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="user-2.jpeg" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="user-3.jpeg" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="user-4.jpeg" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="user-5.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+    </section>
+     <div class="doticon">
+            <h1><i class="fa-solid fa-bars"></i></h1> 
+            <aside>
+                <a href="home.html">  <i class="fa-solid fa-house"></i> Home</a>
+                <a href="#notifications"><i class="fa-solid fa-gear"></i>Notifications</a>
+                <a href="#reels"> <i class="fa-solid fa-film"></i>Reels</a>
+                <a href="#search"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+                <a href="slogin.html"><i class="fa-solid fa-user"></i>Login</a>
+                <a href="#settings">  <i class="fa-solid fa-gear"></i>  Settings</a>
+            
+        </aside>
+        <div class="card">
+    <h4>Suggestions For You</h4>
+    <div class="top">
+      <div class="userDetails">
+        <div class="profilepic">
+          <div class="profile_img">
+            <div class="image">
+              <img src="user-1.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+        <h3>Lisa<br><span>Follows You</span></h3>
+      </div>
+      <div>
+        <a href="#" class="follow">follow</a>
+      </div>
+    </div>
+    <div class="top">
+      <div class="userDetails">
+        <div class="profilepic">
+          <div class="profile_img">
+            <div class="image">
+              <img src="user-2.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+        <h3>cody<br><span>Follows You</span></h3>
+      </div>
+      <div>
+        <a href="#" class="follow">follow</a>
+      </div>
+    </div>
+    <div class="top">
+      <div class="userDetails">
+        <div class="profilepic">
+          <div class="profile_img">
+            <div class="image">
+              <img src="user-3.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+        <h3>Mayank<br><span>Follows You</span></h3>
+      </div>
+      <div>
+        <a href="#" class="follow">follow</a>
+      </div>
+    </div>
+    <div class="top">
+      <div class="userDetails">
+        <div class="profilepic">
+          <div class="profile_img">
+            <div class="image">
+              <img src="user-4.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+        <h3>joey<br><span>Follows You</span></h3>
+      </div>
+      <div>
+        <a href="#" class="follow">follow</a>
+      </div>
+    </div>
+    <div class="top">
+      <div class="userDetails">
+        <div class="profilepic">
+          <div class="profile_img">
+            <div class="image">
+              <img src="user-5.jpeg" alt="" class="cover">
+            </div>
+          </div>
+        </div>
+        <h3>Rado<br><span>Follows You</span></h3>
+      </div>
+      <div>
+        <a href="#" class="follow">follow</a>
+      </div>
+    </div>
+  </div>
+ </div>
+    <script>
+        let   h1=document.querySelector('h1')
+        h1.addEventListener('click',function(){
+            let aside=document.querySelector('aside')
+            if(aside.style.display==='none'){
+                aside.style.display='block'
+            }else{
+                aside.style.display='none'
+            }
+        })
+    </script>
+   
+
+  
+
+    
+      <!-- navbar -->
+    <nav class="navbar">
+      <img src="logo1.png" class="logo" alt=""> <h1>LINKUP</h1>
+      <form class="search-box">
+          <input type="text" placeholder="search" name="search-query" id="search-input">
+          <button class="search-btn" type="submit"><img src="search.png" class="search-icon" alt=""></button>
+      </form>
+      
+      <div class="nav-links">
+          <a href="#" class="nav-links"><img src="home-nofill.png" class="nav-icon" alt=""></a>
+          <div class="activity-log">
+              <img src="heart-nofill.png" class="nav-icon" alt="">
+              <div class="activity-container hide">
+                  <div class="activity-card">
+                      <img src="user1.png" class="user-img" alt="">
+                      <p class="activity"><b>@siri</b> liked your post</p>
+                      <img src="post1.png" class="activity-post" alt="">
+                  </div>
+                  <div class="activity-card">
+                      <img src="user2.png" class="user-img" alt="">
+                      <p class="activity"><b>@siri</b> liked your post</p>
+                      <img src="post1.png" class="activity-post" alt="">
+                  </div>
+                  <div class="activity-card">
+                      <img src="user1.png" class="user-img" alt="">
+                      <p class="activity"><b>@siri</b> liked your post</p>
+                      <img src="post1.png" class="activity-post" alt="">
+                  </div>
+                  <div class="activity-card">
+                      <img src="user3.png" class="user-img" alt="">
+                      <p class="activity"><b>@siri</b> liked your post</p>
+                      <img src="post1.png" class="activity-post" alt="">
+                  </div>
+              </div>
+          </div>
+          <a href="#" class="nav-links"><img src="add-nofill.png" class="nav-icon" alt=""></a>
+         
+      </div>
+  </nav>
+
+  <div class="post">
+      <div class="post-feed">
+          <div class="post-overlays">
+              <img src="red-heart.png" class="like-icon" alt="">
+              <div class="share-window">
+                  <h1 class="title">share the post with others</h1>
+                  <div class="share-link-container">
+                      <input type="text" id="share-link" value="https://www.socialize.com/post/234234234234" disabled>
+                      <button class="copy-btn">copy</button>
+                  </div>
+              </div>
+          </div>
+          <div class="post-img-container">
+              <img src="post-1.jpg" alt="">
+              <img src="post2.png" alt="">
+              <img src="post3.png" alt="">
+              <img src="post4.png" alt="">
+              <img src="post5.png" alt="">
+          </div>
+      </div>
+
+      <div class="feed">
+          <div class="post-header">
+              <img src="user2.png" class="user-icon" alt="">
+              <p class="username">@modernweb</p>
+          </div>
+          <div class="post-detail">
+              <div class="detail-intracables">
+                  <img src="heart-nofill.png" class="like-btn" alt="">
+                  <img src="send-nofill.png" class="send-btn" alt="">
+                  <img src="comment-nofill.png" class="comment-btn" alt="">
+              </div>
+              <span class="likes">2.7k likes</span>
+              <p class="username">@modernweb</p>
+              <p class="post-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa incidunt
+                  obcaecati esse illo voluptates libero debitis nisi. Id tempora vel illum vitae temporibus commodi
+                  non cupiditate atque voluptas. Ipsam.</p>
+
+              <div class="comments-container">
+                  <div class="comment-card">
+                      <img src="user1.png" class="user-dp" alt="">
+                      <div class="comment-body">
+                          <span class="username">@modernweb</span>
+                          <p class="comment">this is amazing 🔥</p>
+                      </div>
+                  </div>
+                  <div class="comment-card">
+                      <img src="user2.png" class="user-dp" alt="">
+                      <div class="comment-body">
+                          <span class="username">@alex</span>
+                          <p class="comment">this is amazing 🔥</p>
+                      </div>
+                  </div>
+                  <div class="comment-card">
+                      <img src="user3.png" class="user-dp" alt="">
+                      <div class="comment-body">
+                          <span class="username">@siri</span>
+                          <p class="comment">this is amazing 🔥</p>
+                      </div>
+                  </div>
+                  <div class="comment-card">
+                      <img src="user4.png" class="user-dp" alt="">
+                      <div class="comment-body">
+                          <span class="username">@jack</span>
+                          <p class="comment">this is amazing 🔥</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="comment-box">
+                  <input type="text" id="comment-input" placeholder="Add a comment">
+                  <button class="add-comment-btn"><img src="comment-nofill.png" alt=""></button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="post.js"></script>
+    
+</body>
+</html>

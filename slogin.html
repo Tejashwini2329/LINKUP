@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhO5xB2ySGff5b758WJVz9mTgBZo7RZfjxA&s);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            height: 450px;
+            width: 400px;
+            border: 1px solid rgb(128, 109, 109);
+            background: transparent;
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            
+
+        }
+       
+        .inputbox{
+            width: 100%;
+            position: relative;
+            border-bottom: 2px solid white;
+            margin-top: 30px;
+
+        }
+        .inputbox label{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: #080808;
+            font-size: 1.2em;
+            transition: 1s;
+        }
+        .inputbox input{
+            width: 100%;
+            height: 50px;
+            padding: 35px 0px 15px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: black;            
+        }
+        input:focus~label{
+            top: -10px;
+        }
+        .forgot{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .forgot label{
+            color: #020101;
+        }
+        .forgot a{
+            text-decoration: none;
+            color: #080707;
+        }
+        button{
+            width: 100%;
+            height: 30px;
+            margin-top: 20px;
+
+            border-radius: 20px;
+        }
+        form{
+            width: 300px;
+        }
+        .Facebook p,a{
+           color: #0f0d0d;
+           font-size: 20px;
+           margin-top: 20px;
+           align-content: center;
+           text-align: center;
+        }
+        .sign p,a{
+           color: #140e0e;
+           font-size: 20px;
+           margin-top: 20px;
+           align-content: center;
+           text-align: center;
+        }
+        .sign a:hover{
+            color: #ff6f61; /* Highlight color on hover */
+            text-decoration: underline;
+        }
+        .logo h2{
+                justify-content: space-evenly;
+                align-content: center;
+                display: flex;
+                color: rgb(130, 83, 238);
+                font-size: 40px;
+                text-align: center;
+                align-content: center;
+                margin-top: 30px;
+                font-family: sans-serif;
+        }
+        .logo i{
+            margin: 5px;
+        }
+        .logo img{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+         <form action="">
+            <div class="logo">
+               
+            <h2>  <img src="logo1.png" class="logo" alt="">LINKUP  </h2> 
+        </div>
+
+            <a href=""></a>
+            <div class="inputbox">
+               <input type="email,phone number or user name" name="email,phone number or user name">
+               <label for="email,phone number or user name" class="label">Email,phone number or user name</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password">
+                <label for="password" class="label">password</label>
+            </div>
+            <div class="forgot">
+              <label for="">
+                <input type="checkbox">Save
+              </label>
+              <label for="">
+                <a href="">Forgot password?</a>
+              </label>
+              
+            </div>
+            <button>Login</button>
+            <div class="Facebook">
+                <p>login with Facebook<a href=""><br>Facebook</a></p>
+            </div>
+            <div class="sign">
+                <a href="sign.html">Sign-up</a>
+            </div>
+         </form>
+        
+    </div>
+</body>
+</html>

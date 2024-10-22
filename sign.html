@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhO5xB2ySGff5b758WJVz9mTgBZo7RZfjxA&s);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .con {
+          
+            width: 400px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            border-color: rgb(83, 70, 70);
+        }
+        
+        .signup-form {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .logo {
+       height: 10vh;
+       display: flex;
+               color: #000;
+        align-content: center;
+        justify-content: center;
+        font-size: 24px; /* Increase font size for visibility */
+        font-family: sans-serif;
+        font-size: 30px;
+    }
+   
+    .logo i {
+        margin-right: 10px; /* Space between icon and text */
+        justify-content: space-evenly;
+                align-content: center;
+                display: flex;
+                color: rgb(130, 83, 238);
+                font-size: 40px;
+                text-align: center;
+                align-content: center;
+    }
+       
+
+        .signup-form input[type="email"],
+        .signup-form input[type="text"],
+        .signup-form input[type="password"] {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%; /* Make inputs full width */
+            padding: 10px; /* Add padding for better UX */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signup-form button[type="submit"] {
+            margin-top: 20px; 
+            margin-bottom: 20px;
+            padding: 10px; /* Add padding for better UX */
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            cursor: pointer;
+        }
+
+        .signup-form button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            align-content: center;
+            justify-items: center;
+            text-align: center;
+        }
+        .logo img{
+            height: 50px;
+            width: 50px;
+        }
+        .logo{
+            color: rgb(130, 83, 238);
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="logo">
+        <img src="logo1.png" class="logo" alt="">LINKUP
+         
+    </div>
+    <div class="con">
+        <div class="signup">
+            <form class="signup-form" method="POST" action="/signup">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required><br>
+                
+                <label for="username">User Name</label>
+                <input type="text" id="username" placeholder="username" required><br>
+                
+                <label for="Password">Password</label>
+                <input type="text" id="Password" placeholder="Password" required><b>
+                
+                <label for="resetpassword">Reset Password</label>
+                <input type="text" id="resetpassword" placeholder="resetpassword" required><br>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
