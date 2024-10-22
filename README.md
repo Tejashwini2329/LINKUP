@@ -1,6 +1,7 @@
 SOCIAL WEBSITE
 
-LINKUP
+LINKUP              
+
 It is a social media website to connect with people.
 
 ![logo](logo1.png)
